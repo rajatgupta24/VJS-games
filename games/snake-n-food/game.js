@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-for (let i=0; i<100; i++){
+for (let i=0; i<200; i++){
     const square = document.createElement("div");
     square.classList.add("square");
     container.appendChild(square);
@@ -9,8 +9,13 @@ for (let i=0; i<100; i++){
 document.addEventListener("DOMContentLoaded", () => {
 
     const squares = document.querySelectorAll(".container div");
-    const scoreTxt = document.querySelectorAll("#score");
+    const scoreTxt = document.querySelector("#score");
     const StartBtn = document.querySelectorAll("#startBtn");
+
+    const upBtn = document.querySelector(".up");
+    const leftBtn = document.querySelector(".left");
+    const rightBtn = document.querySelector(".right");
+    const downBtn = document.querySelector(".down");
 
     let width = 10;
     let score = 0;
@@ -90,5 +95,26 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
 
     document.addEventListener("keyup", controls);
+    upBtn.addEventListener("click", () => {
+        squares[currentTail].classList.remove("snake");
+        direction = -width;
+    });
+
+    downBtn.addEventListener("click", () => {
+        squares[currentTail].classList.remove("snake");
+        direction = width;
+    });
+
+
+    rightBtn.addEventListener("click", () => {
+        squares[currentTail].classList.remove("snake");
+        direction = 1;
+    });
+
+    leftBtn.addEventListener("click", () => {
+        squares[currentTail].classList.remove("snake");
+        direction = -1;
+    });
+
     startBtn.addEventListener("click", setUpGame);
 });
