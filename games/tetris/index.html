@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css"></link>
-    <title>Basic Tetris</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../../assets/tetris.png" type="image/x-icon">
   </head>
   <body>
 
-    <h3>Score:<span id="score">0</span></h3>
-    <button id="start-button">Start/Pause</button>
+    <header>
+      <a href="/index.html">
+          <img class="link" src="../../assets/left-arrow.png" alt="">
+      </a>
+      <h1>Scores: <span id="score">0</span></h1>
+      <button class="back-btn" id="startBtn">
+          <img class="link" src="../../assets/undo.png" alt="">
+      </button>
+    </header>
 
     <div class="container">
       <div class="grid">
@@ -33,6 +43,26 @@
         <div></div>
       </div>
     </div>
+
+    <div class="btns">
+      <button class="left btn">
+          <img class="link" src="../../assets/left-arrow.png" alt="">
+      </button>
+      <button class="up btn">
+          <img class="link" src="../../assets/up-arrow.png" alt="">
+      </button>
+      <button class="down btn">
+          <img class="link" src="../../assets/download-arrow.png" alt="">
+      </button>
+      <button class="right btn">
+          <img class="link" src="../../assets/right-arrow.png" alt="">
+      </button>
+    </div>
+
+    <footer>
+        <p class="end">Created by Rajat</p>
+    </footer>
+
     <script src="game.js"></script>
   </body>
 </html>
