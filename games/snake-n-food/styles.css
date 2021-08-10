@@ -49,6 +49,7 @@ header{
 
 .link{
     width: 1.5rem;
+    outline: none;
 }
 
 .back-btn{

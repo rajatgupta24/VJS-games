@@ -15,7 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   let squares = Array.from(document.querySelectorAll('.grid div'))
   const scoreDisplay = document.querySelector('#score')
-  const startBtn = document.querySelector('#startBtn')
+  const startBtn = document.querySelector('#startBtn');
+
+  const upBtn = document.querySelector(".up");
+  const leftBtn = document.querySelector(".left");
+  const rightBtn = document.querySelector(".right");
+  const downBtn = document.querySelector(".down");
+
   const width = 10
   let nextRandom = 0
   let timerId
@@ -97,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       moveDown()
     }
   }
-  document.addEventListener('keyup', control)
+  document.addEventListener('keydown', control)
 
   //move down function
   function moveDown() {
@@ -171,6 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  upBtn.addEventListener("click", rotate);
+
+  downBtn.addEventListener("click", moveDown);
+
+  rightBtn.addEventListener("click", moveRight);
+
+  leftBtn.addEventListener("click", moveLeft);
+
   //rotate the tetromino
   function rotate() {
     undraw()
